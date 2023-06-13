@@ -44,4 +44,11 @@ class Game
   def game_save
     @game_data.save_progress(@the_word, @score, @progress_ary)
   end
+
+  def load_save
+    @game_data.load_data
+    @score = @game_data.loaded_data[:score]
+    @the_word = @game_data.loaded_data[:word]
+    @progress_ary = @game_data.loaded_data[:progess]
+
 end
